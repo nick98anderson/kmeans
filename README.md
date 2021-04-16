@@ -20,6 +20,19 @@ setosa, versicolor, and virginica. From the scatter plot we can see that these t
  
 The kmeans algorithm is an iterative procces which attempts to partition our dataset into k clusters where each datapoint belongs to a cluster with nearest mean.
 
-- First we need to determine our k. for this instance we want k=3 since we have observed 3 somewhat distinct groups in the dataset. 
-- Next we must
+- First we need to determine our k. for this instance we want k=3 since we have observed 3 somewhat distinct groups in the dataset and we have 3 labels. 
+
+- Next we must initialize our three centroids. The centroids are our three Means, each datapoint will be classified based on which centroid it is closest to. 
+
+```python:
+    k = 3
+    n_iter = 300
+    n = X.shape[0]
+    m = X.shape[1]
+    
+   centroids = np.zeros((m, k)) 
+   for i in range(0,k):
+   centroids[:,i] = X[np.random.randint(0,n)]
+    
+ ```
   
