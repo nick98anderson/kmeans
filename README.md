@@ -47,7 +47,7 @@ The kmeans algorithm is an iterative procces which attempts to partition our dat
 
 ```
 
-4. From here we iterativly repeat steps 2 and 3 except our centroids are initialized by finding the mean values of datapoints in each group. This is similiar to   gradient descent with the process of minimizing a cost function J iteratively where our J can be seen as the sum of 2-norm distances. 
+4. From here we iterativly repeat steps 2 and 3 except our centroids are initialized by finding the mean values of datapoints in each group. This is similiar to   gradient descent with the process of minimizing a cost function J iteratively where our J can be seen as the sum of 2-norm distances. According to a reasearch paper by google, for practical solutions, kmeans will converge after 20-50 iterations. With this in mind, I decided to go with 300 iterations because you can never be too safe. 
 
 ```python:
 for i in range(n_iter):
@@ -61,4 +61,6 @@ for i in range(n_iter):
         norm = np.linalg.norm(X-c, axis=1)
         distances[:,i] = norm
 ```
+
+### Results
   
