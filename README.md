@@ -1,11 +1,7 @@
-# kmeans
-kmeans clustering implementation for cmput340 
-
-
 # Introduction 
-For this project I decided to implemented kmeans clustering.
+For this project I decided to implemented kmeans clustering. 
 Kmeans clustering is a form of unsupervised learning where we try to disover underlying patterns in the dataset and predict the the target labels of the dataset. 
-Kmeans achieves this by clustering the data into different groups. 
+Kmeans achieves this by clustering the data into different groups. Example usages of kmeans can be found in identifying music genres based on track data, movie genres based on box office gross, or even image compression.  
 
 # Implementation
 
@@ -62,5 +58,16 @@ for i in range(n_iter):
         distances[:,i] = norm
 ```
 
-### Results
-  
+## Results
+ 
+Since kmeans is non-deterministic and can produce differnt outputs on differnt iterations, I ran the algoirthm a few times to see the outputs k=3 would produce with differnt randomly initialized centroids and the only labelings it produced were the two following labelings bellow. The first output classifies the data better as it closer resembles the labeling the dataset.
+
+<img src="results1.png"/> <img src="results2.png"/>
+
+To note one last thing, somoetimes the dataset may not have explicit labelings of the data points but we can still try to identify clusters in order to confirm assumptions or discover unknown labelings in the dataset.  
+
+
+## References 
+https://en.wikipedia.org/wiki/K-means_clustering
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42853.pdf
